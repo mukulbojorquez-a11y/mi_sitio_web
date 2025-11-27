@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnimeLab</title>
+  <!-- Hoja de estilos principal -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Fuente Inter de Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/jolly_roger.jpeg">
+
+</head>
+<body>
+  <!-- Encabezado del sitio con navegación -->
+  <header class="site-header">
+    <div class="container">
+      <!-- Logo del sitio -->
+      <h1 class="logo">AnimeLab</h1>
+      <!-- Botón para menú móvil -->
+      <button class="nav-toggle" onclick="toggleMenu()">☰</button>
+      <!-- Navegación principal -->
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link">Inicio</a></li>
+          <li><a href="#characters" class="nav-link">Personajes</a></li>
+          <li><a href="#gallery" class="nav-link">Galería</a></li>
+          <li><a href="#news" class="nav-link">Noticias</a></li>
+          <li><a href="#contact" class="nav-link">Contacto</a></li>
+          <li><a href="#credits" class="nav-link">Créditos</a></li>
+        </ul>
+      </nav>
+      <!-- Botón para alternar entre modo claro/oscuro -->
+      <button class="theme-btn" onclick="toggleTheme()">🌓</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Sección Hero -->
+    <section id="home" class="hero">
+      <div class="container">
+        <h2>¡Bienvenido a AnimeLab!</h2>
+        <p>Explora el mundo de One Piece con nosotros.</p>
+        <div class="quick-actions">
+          <!-- Botón para controlar la música de fondo -->
+          <button class="btn" onclick="toggleMusic()">🎵 Música</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Personajes -->
+    <section id="characters" class="characters">
+      <div class="container">
+        <h2>Personajes</h2>
+        <!-- Grid de tarjetas de personajes -->
+        <div class="card-grid">
+          <!-- Tarjeta de Luffy -->
+          <div class="card" onclick="openModal('luffy')">
+            <img src="assets/Luffy-avatar.jpg" alt="Luffy" class="avatar"> 
+            <h3>Luffy</h3>
+            <p>Capitan de los Sombrero de Paja.</p>
+          </div>
+          <!-- Tarjeta de Zoro -->
+          <div class="card" onclick="openModal('zoro')">
+            <img src="assets/Zoro-avatar.jpg" alt="Zoro" class="avatar">
+            <h3>Zoro</h3>
+            <p>Espadachín de los Sombrero de Paja.</p>
+          </div>
+          <!-- Tarjeta de Ace -->
+          <div class="card" onclick="openModal('ace')">
+            <img src="assets/Ace-avatar.jpeg" alt="Ace" class="avatar">
+            <h3>Ace</h3>
+            <p>Comandante de la Segunda Division.</p>
+          </div>
+          <!-- Tarjeta de Barbablanca -->
+          <div class="card" onclick="openModal('barbablanca')">
+            <img src="assets/BarbaBlanca-avatar.jpeg" alt="Barbablanca" class="avatar">
+            <h3>Barbablanca</h3>
+            <p>Emperador del Mar.</p>
+          </div>
+        </div>
+
+        <!-- Modales para cada personaje -->
+        <!-- Modal para Luffy -->
+        <div id="luffy-modal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('luffy')">&times;</span>
+            <h2>Luffy</h2>
+            <img src="assets/Luffy-avatar.jpg" alt="Luffy" class="modal-avatar">
+            <p>Monkey D. Luffy es un pirata que busca convertirse en el Rey de los Piratas. Tiene el poder de la Goma-Goma no Mi.</p>
+          </div>
+        </div>
+        <!-- Modal para Zoro -->
+        <div id="zoro-modal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('zoro')">&times;</span>
+            <h2>Zoro</h2>
+            <img src="assets/Zoro-avatar.jpg" alt="Zoro" class="modal-avatar">
+            <p>Roronoa Zoro es un espadachín y miembro de la tripulación de Luffy. Su objetivo es convertirse en el mejor espadachín del mundo.</p>
+          </div>
+        </div>
+        <!-- Modal para Ace -->
+        <div id="ace-modal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('ace')">&times;</span>
+            <h2>Ace</h2>
+            <img src="assets/Ace-avatar.jpeg" alt="Ace" class="modal-avatar">
+            <p>Portgas D. Ace es el hermano mayor de Luffy y usuario de la Mera-Mera no Mi. Fue capitán de la 2ª División de los Piratas de Barbablanca.</p>
+          </div>
+        </div>
+        <!-- Modal para Barbablanca -->
+        <div id="barbablanca-modal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('barbablanca')">&times;</span>
+            <h2>Barbablanca</h2>
+            <img src="assets/BarbaBlanca-avatar.jpeg" alt="Barbablanca" class="modal-avatar">
+            <p>Edward Newgate, conocido como Barbablanca, fue uno de los Cuatro Emperadores y capitán de los Piratas de Barbablanca.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Galería -->
+    <section id="gallery" class="gallery">
+      <div class="container">
+        <h2>Galería</h2>
+        <!-- Grid de imágenes -->
+        <div class="gallery-grid">
+          <div class="thumb" onclick="openLightbox('assets/Luffy.jpg')">
+            <img src="assets/Luffy.jpg" alt="Luffy">
+          </div>
+          <div class="thumb" onclick="openLightbox('assets/Zoro.jpg')">
+            <img src="assets/Zoro.jpg" alt="Zoro">
+          </div>
+          <div class="thumb" onclick="openLightbox('assets/Ace.jpeg')">
+            <img src="assets/Ace.jpeg" alt="Ace">
+          </div>
+          <div class="thumb" onclick="openLightbox('assets/BarbaBlanca.jpeg')">
+            <img src="assets/BarbaBlanca.jpeg" alt="Barbablanca">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox para mostrar imágenes en grande -->
+    <div id="lightbox" class="lightbox">
+      <span class="close" onclick="closeLightbox()">&times;</span>
+      <img id="lightbox-img" src="">
+    </div>
+
+    <!-- Sección de Noticias -->
+    <section id="news" class="news">
+      <div class="container">
+        <h2>Noticias</h2>
+        <!-- Grid de tarjetas de noticias -->
+        <div class="card-grid">
+          <div class="card" onclick="openNewsModal('news1')">
+            <h3>Nuevo arco de One Piece anunciado</h3>
+            <p>Fecha: 18/11/2025</p>
+          </div>
+          <div class="card" onclick="openNewsModal('news2')">
+            <h3>Live Action de One Piece</h3>
+            <p>Fecha: 10/03/2026</p>
+          </div>
+        </div>
+        <!-- Modales para noticias -->
+        <div id="news1-modal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeNewsModal('news1')">&times;</span>
+            <h2>Nuevo arco de One Piece anunciado</h2>
+            <p>Se ha anunciado un nuevo arco en el anime de One Piece, continuando la aventura de Luffy y su tripulación.</p>
+          </div>
+        </div>
+        <div id="news2-modal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeNewsModal('news2')">&times;</span>
+            <h2>Live Action Temporada 2 de One Piece</h2>
+            <p>Ve la segunda temporada en Netflix en 2026.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Contacto</h2>
+        <!-- Formulario de contacto -->
+        <form class="form" onsubmit="validateForm(event)">
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" required>
+          <label for="email">Correo:</label>
+          <input type="email" id="email" required>
+          <label for="message">Mensaje:</label>
+          <textarea id="message" required></textarea>
+          <button type="submit" class="btn">Enviar</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Sección de Créditos -->
+    <section id="credits" class="credits">
+      <div class="container">
+        <h2>Acerca de AnimeLab</h2>
+        <p>Desarrollado por: David Bojorquez</p>
+        <p>Asignatura: Desarrollo Web</p>
+        <p>Grupo: TTD-4A</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+<!-- Pie de página -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <!-- Año actual (automático) -->
+      <p>© <span id="year"></span> AnimeLab. Todos los derechos reservados.</p>
+
+      <!-- Íconos de redes sociales -->
+      <div class="social-icons">
+        <a href="https://youtube.com" target="_blank" class="social-icon" aria-label="YouTube">
+          <img src="assets/youtube-icon.jpg" alt="YouTube">
+        </a>
+        <a href="https://facebook.com" target="_blank" class="social-icon" aria-label="Facebook">
+          <img src="assets/facebook-icon.jpg" alt="Facebook">
+        </a>
+        <a href="https://x.com" target="_blank" class="social-icon" aria-label="Twitter/X">
+          <img src="assets/x-icon.jpg" alt="Twitter/X">
+        </a>
+        <a href="https://instagram.com" target="_blank" class="social-icon" aria-label="Instagram">
+          <img src="assets/instagram-icon.jpg" alt="Instagram">
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+  <!-- Reproductor de música de fondo -->
+  <audio id="bg-music" src="assets/onepiece-theme.mp3" loop></audio>
+
+  <!-- Script principal -->
+  <script src="js/main.js"></script>
+</body>
+</html>
